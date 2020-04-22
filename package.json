@@ -1,0 +1,27 @@
+{
+  "author": "1222",
+  "name": "1222",
+  "description": "1222",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "~4.0.0",
+    "express-handlebars": "^3.1.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-cache": "^0.4.6",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-declare": "^0.3.0",
+    "gulp-handlebars": "^5.0.2",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "gulp-wrap": "^0.15.0",
+    "run-sequence": "^2.2.1"
+  }
+}
