@@ -14,6 +14,10 @@ app.engine('hbs', hbs({
   partialsDir: __dirname + '/views/partials/'
 }));
 
+// Initialize Contentful client
+var contentful = require('./services/contentful');
+contentful.init();
+
 // Set up router
 var router = require('./routes/router');
 router(app);
