@@ -1,7 +1,11 @@
-{{#each images}}
-  <div class="row">
-    <div class="one-half column">
-      <img src="{{this}}">
+<div class="capsule">
+  {{#row images 2}}
+    <div class="row">
+    {{#each columns}}
+      <div class="one-half column pr1 pt4 pb3">
+        <img src="{{this}}" class="shot">
+      </div>
+    {{/each}}
     </div>
-  </div>
-{{/each}}
+  {{/row}}
+</div>
