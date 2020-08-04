@@ -55,6 +55,11 @@ gulp.task('images', function() {
     .pipe(gulp.dest('dist/img'))
 });
 
+gulp.task('fonts', function() {
+  gulp.src('assets/fonts/**/*.{ttf,woff,eof,svg}')
+    .pipe(gulp.dest('dist/fonts'));
+});
+
 gulp.task('views', function() {
   gulp.src('views/*.hbs')
     .pipe(handlebars())
@@ -78,7 +83,7 @@ gulp.task('default', function(callback) {
     'clean:dist',
     'browserSync',
     'watch',
-    ['js', 'scss', 'images', 'views'],
+    ['js', 'scss', 'images', 'fonts', 'views'],
     callback
   )
 })
@@ -86,7 +91,7 @@ gulp.task('default', function(callback) {
 gulp.task('build', function(callback) {
   runSequence(
     'clean:dist',
-    ['js', 'scss', 'images', 'views'],
+    ['js', 'scss', 'images', 'fonts', 'views'],
     callback
   )
 })
