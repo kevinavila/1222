@@ -63,6 +63,18 @@ a, a:hover {
   }
 }
 
+.join {
+
+  input[type="text"] {
+    height: 16rem;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16rem;
+    caret-color: pink;
+  }
+}
+
 
 /* Padding
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
