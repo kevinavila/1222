@@ -14,6 +14,8 @@ $paddingValues: $spacing0, $spacing1, $spacing2, $spacing3, $spacing4, $spacing5
 
 $remFactor: 1.6;
 
+$pink: #FF70EA;
+
 /* Elements
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -21,7 +23,13 @@ body {
   background: black;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, label {
+  font-family: "Berthold Akzidenz Grotesk BE Bold Extended", "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: white;
+  letter-spacing: 0.1rem;
+}
+
+p {
   color: white;
 }
 
@@ -66,13 +74,20 @@ a, a:hover {
 .join {
 
   input[type="text"] {
-    height: 16rem;
+    height: 8rem;
     background: transparent;
     border: none;
     color: white;
-    font-size: 16rem;
-    caret-color: pink;
+    font-size: 8rem;
+    caret-color: $pink;
     width: 100%;
+    border-bottom: 0.2rem solid white;
+
+    @media (min-width: 900px) {
+      font-size: 16rem;
+      height: 16rem;
+      border: none;
+    }
   }
 
   .disclaimer {
@@ -80,6 +95,49 @@ a, a:hover {
   }
 }
 
+.agreements {
+
+  .page-title {
+    font-size: 3.2rem;
+  }
+
+  .agreement-title {
+    font-size: 1.4rem;
+  }
+
+  #agreements-checkbox {
+    display: none;
+  }
+
+  label {
+    display: inline-block;
+    position: relative;
+    padding-left: 5rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    margin: 5px;
+    color: white;
+  }
+
+  label:before {
+    content: "";
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    left: 0;
+    background-color: black;
+    border: 0.3rem solid $pink;
+  }
+
+  input[type=checkbox]:checked + label:before {
+    content: "\2713";
+    color: white;
+    text-align: center;
+    line-height: 3rem;
+    font-size: 2rem;
+  }
+}
 
 /* Padding
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

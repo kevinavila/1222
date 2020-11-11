@@ -9,7 +9,8 @@ module.exports = function(app) {
 
   // Join
   app.route('/join').get(join.get);
+  app.route('/validateAccessCode').get(join.validateAccessCode);
 
-  // Capsul
+  // Capsule
   app.route('/capsule').get(capsule.get);
 };
