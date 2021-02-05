@@ -32,3 +32,21 @@ module.exports.getImages = function() {
         console.log(e);
     });
 };
+
+/**
+ * Gets entries
+ *
+ * @returns {Array<Obj>} - array of entries
+ */
+module.exports.getEntries = function(contentType) {
+    var query = {
+        content_type: contentType
+    }
+
+    return client.getEntries(query).then(function (response) {
+        return response.items
+    })
+    .catch(function (e) {
+        console.log(e);
+    });
+};
