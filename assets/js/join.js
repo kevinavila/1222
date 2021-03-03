@@ -12,11 +12,11 @@ $("#access-code").keypress(function(event) {
         $(".join").fadeOut(500, function () {
             var partyUrl = '/party/' + accessCode
             $.get(partyUrl, function(response) {
-                // Show Agreements
-                // var agreementsHtml = $(response).find('.agreements');
-                // $(".join").html(agreementsHtml)
-                // $(".footer").removeClass("fixed")
-                // $(".join").fadeIn(500)
+                // Show agreements before party details
+                var partyHtml = $(response).find('.party')
+                $(".join").html(partyHtml)
+                $(".footer").removeClass("fixed")
+                $(".join").fadeIn(500)
             })
         })
     }
@@ -28,5 +28,6 @@ function letsParty() {
 
     if (agreementsCheckbox.is(":checked")) {
         // Agreements checkbox is checked, show party details
+        $('.agreements').hide()
     }
 }

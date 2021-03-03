@@ -6,6 +6,9 @@ exports.get = function(req, res) {
 	var accessCode = req.params.accessCode
 
 	contentful.getEntries('party').then(function (parties) {
-        res.render('party', {layout: 'main', footer: 'footer fixed'})
+		var party = parties.length > 0 ? parties[0].fields : null
+
+		// If it's null return a invalid code page?
+        res.render('party', { layout: 'main', footer: 'footer fixed', party: party })
     })
 };
