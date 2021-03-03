@@ -21,7 +21,7 @@ module.exports.getImages = function() {
     return client.getAssets().then(function (assets) {
         // Construct array of URLs
         var imageUrls = assets.items.map(function(asset) {
-            var url = 'https:' + asset.fields.file.url;
+            var url = 'https:' + asset.fields.file.url
 
             return url;
         });

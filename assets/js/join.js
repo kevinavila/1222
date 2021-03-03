@@ -29,5 +29,6 @@ function letsParty() {
     if (agreementsCheckbox.is(":checked")) {
         // Agreements checkbox is checked, show party details
         $('.agreements').hide()
+        $('.party-details').removeClass('hide')
     }
 }
