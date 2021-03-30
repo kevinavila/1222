@@ -13,27 +13,6 @@ module.exports.init = function() {
 };
 
 /**
- * Gets all assets
- *
- * @returns {Array<String>} - array of image URLs
- */
-module.exports.getImages = function() {
-    return client.getAssets().then(function (assets) {
-        // Construct array of URLs
-        var imageUrls = assets.items.map(function(asset) {
-            var url = 'https:' + asset.fields.file.url
-
-            return url;
-        });
-
-        return imageUrls;
-    })
-    .catch(function (e) {
-        console.log(e);
-    });
-};
-
-/**
  * Gets entries
  *
  * @returns {Array<Obj>} - array of entries
