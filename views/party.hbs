@@ -11,9 +11,17 @@
 	  	<p>{{ party.introduction }}</p>
 	  	<p>1222 believes in creating a safe and responsible space to enjoy music and the community of others.</p>
 	  	<h3>LOCATION</h3>
-	  	<p>{{ party.locationName }}</p>
-	  	<p>{{ party.locationAddress }}</p>
+	  	<p>{{ party.locationName }}<br>{{ party.locationAddress }}</p>
 	  	<img src="{{ party.locationMapImage }}">
+	  	<p>{{ party.locationTip }}</p>
+	  	<h3>LINEUP</h3>
+	  	<p>
+	  	{{#each party.artistLineup }}
+	  		{{ this }}<br>
+	  	{{/each}}
+	  	</p>
+	  	<h3>MONEY</h3>
+	  	<p>{{ party.donationAmount }}<br>{{ party.donationText }}</p>
 	  </div>
 
 	  <!-- Desktop -->
