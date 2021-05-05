@@ -1,7 +1,7 @@
 "use strict";
 
 // Enter key is pressed on mobile
-$("#access-code").keypress(function(event) {
+$('#access-code').keypress(function(event) {
     if (event.which == 13) {
         // Get access code
         var accessCode = $('#access-code').val()
@@ -10,12 +10,17 @@ $("#access-code").keypress(function(event) {
 })
 
 // Enter key is pressed on desktop
-$("#access-code-desktop").keypress(function(event) {
+$('#access-code-desktop').keypress(function(event) {
     if (event.which == 13) {
         // Get access code
         var accessCode = $('#access-code-desktop').val()
         validateAccessCode(accessCode)
     }
+})
+
+// Dynamically bind listener to agreement checkboxes
+$('.join').on('change', 'input:checkbox', function() {
+    updateNext()
 })
 
 // Validate access code, grab party, and display agreements
@@ -38,11 +43,38 @@ function validateAccessCode(accessCode) {
 
 // Validate agreements have been accepted and show party page
 function letsParty() {
-    var agreementsCheckbox = $('#agreements-checkbox')
-
-    if (agreementsCheckbox.is(":checked")) {
-        // Agreements checkbox is checked, show party details
+    if (agreementsChecked()) {
+        // Show party details
         $('.agreements').hide()
         $('.party-details').removeClass('hide')
     }
+}
+
+// Update next arrow based on agreement checkboxes
+function updateNext() {
+    if (agreementsChecked()) {
+        $(".next").removeClass("disabled")
+    } else {
+        $(".next").addClass("disabled")
+    }
+}
+
+// Check if agreement checkboxes are checked
+function agreementsChecked() {
+    var agreementsChecked         = false
+    var agreementsCheckbox        = $('#agreements-checkbox')
+    var agreementsCheckboxRespect = $('#agreements-checkbox-respect')
+    var agreementsCheckboxJourney = $('#agreements-checkbox-journey')
+    var agreementsCheckboxTrace   = $('#agreements-checkbox-trace')
+    var agreementsCheckboxActions = $('#agreements-checkbox-actions')
+
+    if (agreementsCheckbox.is(":checked")) {
+        // Mobile agreements checkbox is checked
+        agreementsChecked = true
+    } else if (agreementsCheckboxRespect.is(":checked") && agreementsCheckboxJourney.is(":checked") && agreementsCheckboxTrace.is(":checked") && agreementsCheckboxActions.is(":checked")) {
+        // Desktop agreements checkboxes are checked
+        agreementsChecked = true
+    }
+
+    return agreementsChecked
 }

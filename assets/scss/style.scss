@@ -114,8 +114,18 @@ a, a:hover {
     }
   }
 
-  #agreements-checkbox {
+  #agreements-checkbox, #agreements-checkbox-respect, #agreements-checkbox-journey, #agreements-checkbox-trace, #agreements-checkbox-actions {
     display: none;
+  }
+
+  .next {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .disabled {
+    opacity: 0.2;
+    cursor: default;
   }
 
   label {
