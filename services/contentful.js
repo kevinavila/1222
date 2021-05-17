@@ -13,6 +13,20 @@ module.exports.init = function() {
 };
 
 /**
+ * Get a single entry
+ *
+ * @returns {Obj} - a single entry
+ */
+module.exports.getEntry = function(id) {
+    return client.getEntry(id).then(function (response) {
+        return response
+    })
+    .catch(function (e) {
+        console.log(e);
+    });
+};
+
+/**
  * Gets entries
  *
  * @returns {Array<Obj>} - array of entries

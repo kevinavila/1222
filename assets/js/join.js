@@ -26,15 +26,21 @@ $('.join').on('change', 'input:checkbox', function() {
 // Validate access code, grab party, and display agreements
 function validateAccessCode(accessCode) {
     if (accessCode) {
-        $(".join").fadeOut(500, function () {
-            var partyUrl = '/party/' + accessCode
-            $.get(partyUrl, function(response) {
-                // Show agreements before party details
-                var partyHtml = $(response).find('.party')
-                $(".join").html(partyHtml)
-                $(".footer").removeClass("fixed")
-                $(".join").fadeIn(500)
-            })
+        $.get('/parties?code=' + accessCode, function(response) {
+            if (response.success) {
+                // Access code validated
+                $(".join").fadeOut(500, function () {
+                    $.get('/party/' + response.party.id, function(response) {
+                        // Show agreements before party details
+                        var partyHtml = $(response).find('.party')
+                        $(".join").html(partyHtml)
+                        $(".footer").removeClass("fixed")
+                        $(".join").fadeIn(500)
+                    })
+                })
+            } else {
+                // No party with the entered access code was found
+            }
         })
     } else {
         // No access code error message

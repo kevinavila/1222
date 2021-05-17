@@ -12,7 +12,8 @@ module.exports = function(app) {
   app.route('/join').get(join.get);
 
   // Party
-  app.route('/party/:accessCode').get(party.get);
+  app.route('/party/:id').get(party.get);
+  app.route('/parties').get(party.parties);
 
   // Capsule
   app.route('/capsule').get(capsule.get);

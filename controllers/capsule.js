@@ -17,6 +17,6 @@ exports.get = function(req, res) {
 			})
 		}
 
-		res.render('capsule', {layout: 'main', footer: 'footer', images: imageUrls})
+		res.render('capsule', { layout: 'main', footer: 'footer', images: imageUrls })
 	});
 };
