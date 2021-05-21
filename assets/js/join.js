@@ -29,6 +29,7 @@ function validateAccessCode(accessCode) {
         $.get('/parties?code=' + accessCode, function(response) {
             if (response.success) {
                 // Access code validated
+                $("#logo").attr("src", "img/logo_pink.png")
                 $(".join").fadeOut(500, function () {
                     $.get('/party/' + response.party.id, function(response) {
                         // Show agreements before party details
@@ -40,10 +41,12 @@ function validateAccessCode(accessCode) {
                 })
             } else {
                 // No party with the entered access code was found
+                $(".error").removeClass("hide")
             }
         })
     } else {
         // No access code error message
+        $(".error").removeClass("hide")
     }
 }
 

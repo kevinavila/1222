@@ -68,6 +68,11 @@ a, a:hover {
   display: none;
 }
 
+.error-message {
+  color: #FF5C5C;
+  font-family: "Berthold Akzidenz Grotesk BE Regular";
+}
+
 .capsule {
 
   .shot {
@@ -167,6 +172,50 @@ a, a:hover {
 
 .party {
 
+  .page-title {
+    font-size: 3.2rem;
+
+    @media (min-width: 900px) {
+      font-size: 10rem;
+    }
+  }
+
+  .vibe-line {
+    font-size: 2.5rem;
+    font-family: "Berthold Akzidenz Grotesk BE Light Extended";
+  }
+
+  .location-address {
+    margin-bottom: 0;
+  }
+
+  .location-tip {
+    font-family: "Berthold Akzidenz Grotesk BE Light Extended";
+  }
+
+  .location-map-image {
+    width: 70%;
+  }
+
+  .donation-text {
+    margin-bottom: 0;
+  }
+
+  .donation-amount {
+    font-size: 5rem;
+    margin-bottom: 0;
+    font-family: "Berthold Akzidenz Grotesk BE Bold Extended";
+  }
+
+  .star {
+    width: 20%;
+    float: left;
+  }
+
+  .agreement {
+    width: 80%;
+    float: left;
+  }
 }
 
 /* Padding
@@ -214,4 +263,8 @@ a, a:hover {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.underline {
+  text-decoration: underline;
 }

@@ -8,50 +8,94 @@
 	  <div class="hide-gt-tablet">
 	  	<h2 class="page-title pt4 uppercase">{{ party.title }}</h2>
 	  	<p>{{ party.vibeLine }}</p>
-	  	<p>{{ party.introduction }}</p>
-	  	<p>1222 believes in creating a safe and responsible space to enjoy music and the community of others.</p>
+	  	<p class="pb4">{{ party.introduction }}</p>
 	  	<h3>LOCATION</h3>
-	  	<p>{{ party.locationName }}<br>{{ party.locationAddress }}</p>
+	  	<p class="location-address">{{ party.locationName }}<br>{{ party.locationAddress }}</p>
 	  	<img src="{{ party.locationMapImage }}">
-	  	<p>{{ party.locationTip }}</p>
+	  	<p class="location-tip underline pb3">{{ party.locationTip }}</p>
 	  	<h3>LINEUP</h3>
-	  	<p>
+	  	<p class="pb3">
 	  	{{#each party.artistLineup }}
 	  		{{ this }}<br>
 	  	{{/each}}
 	  	</p>
-	  	<h3>MONEY</h3>
-	  	<p>{{ party.donationAmount }}<br>{{ party.donationText }}</p>
+	  	<h3>$$$$$$$$$$$</h3>
+	  	<p class="donation-text">{{ party.donationText }}</p>
+		<p class="donation-amount">{{ party.donationAmount }}</p>
+	  	<p class="pb3">Venmo: @productions-1222<br>Cash App: $productions1222</p>
+	  	<h3>AGREEMENTS</h3>
+	  	<div>
+	  		<div class="star">
+	  			<img src="img/star.png" alt="star" width="40px" height="40px">
+	  		</div>
+	  		<div>
+	  			<p class="agreement pt2">Respect + Love Each Other ❤️ NO ILL WILL TOLERATED</p>
+	  		</div>
+		</div>
+		<div>
+			<div class="star">
+				<img src="img/star.png" alt="star" width="40px" height="40px">
+			</div>
+			<div>
+				<p class="agreement pt2">Be safe, be quick, and be quiet on your journey, we never want to attract any unnecessary attention.</p>
+			</div>
+		</div>
+		<div>
+			<div class="star">
+				<img src="img/star.png" alt="star" width="40px" height="40px">
+			</div>
+			<div class="agreement">
+				<p class="pt2">LEAVE NO TRACE! (Trash, vandalism, etc.) We must be respectful of the spaces we occupy and all people who use it. We respect the community = The community respects us!</p>
+			</div>
+		</div>
+		<div>
+			<div class="star">
+				<img src="img/star.png" alt="star" width="40px" height="40px">
+			</div>
+			<div class="agreement">
+				<p class="pt2">BYOB!</p>
+			</div>
+		</div>
 	  </div>
 
 	  <!-- Desktop -->
 	  <div class="hide-lt-tablet">
 		<h2 class="page-title pt4 uppercase">{{ party.title }}</h2>
 		<div class="row">
-			<p>{{ party.vibeLine }}</p>
-			<p>{{ party.introduction }}</p>
+			<div class="one-half column">
+				<p class="vibe-line pb5">{{ party.vibeLine }}</p>
+				<p>{{ party.introduction }}</p>
+			</div>
 		</div>
 		<div class="row">
 			<div class="one-half column">
 				<h3>LOCATION</h3>
-				<p>{{ party.locationName }}<br>{{ party.locationAddress }}</p>
-				<img src="{{ party.locationMapImage }}">
-				<p>{{ party.locationTip }}</p>
+				<p class="location-address">{{ party.locationName }}<br>{{ party.locationAddress }}</p>
+				<img class="location-map-image" src="{{ party.locationMapImage }}">
+				<p class="location-tip underline pb3">{{ party.locationTip }}</p>
 			</div>
 			<div class="one-half column">
 				<h3>AGREEMENTS</h3>
-				<img src="img/star.png" alt="star" width="40px" height="40px" class="float-left"><p>Respect + Love Each Other ❤️ NO ILL WILL TOLERATED</p>
-				<p>Be safe, be quick, and be quiet on your journey, we never want to attract any unnecessary attention.</p>
-				<p>LEAVE NO TRACE! (Trash, vandalism, etc.) We must be respectful of the spaces we occupy and all people who use it. We respect the community = The community respects us!</p>
-				<p>BYOB!</p>
+				<img src="img/star.png" alt="star" width="40px" height="40px" class="float-left"><p class="pt2">Respect + Love Each Other ❤️ NO ILL WILL TOLERATED</p>
+				<img src="img/star.png" alt="star" width="40px" height="40px" class="float-left"><p class="pt2">Be safe, be quick, and be quiet on your journey, we never want to attract any unnecessary attention.</p>
+				<img src="img/star.png" alt="star" width="40px" height="40px" class="float-left"><p class="pt2">LEAVE NO TRACE! (Trash, vandalism, etc.) We must be respectful of the spaces we occupy and all people who use it. We respect the community = The community respects us!</p>
+				<img src="img/star.png" alt="star" width="40px" height="40px" class="float-left"><p class="pt2">BYOB!</p>
 	  		</div>
 	  	</div>
 	  	<div class="row">
 	  		<div class="one-half column">
 				<h3>$$$$$$$$$$$$$</h3>
-				<p>{{ party.donationText }}</p>
-				<p>{{ party.donationAmount }}</p>
-				<p><b>Venmo:</b> @productions-1222<br><b>Cash App:</b> $productions1222</p>
+				<p class="donation-text">{{ party.donationText }}</p>
+				<p class="donation-amount">{{ party.donationAmount }}</p>
+				<p>Venmo: @productions-1222<br>Cash App: $productions1222</p>
+	  		</div>
+	  		<div class="one-half column">
+	  			<h3>LINEUP</h3>
+			  	<p class="pb3">
+			  	{{#each party.artistLineup }}
+			  		{{ this }}<br>
+			  	{{/each}}
+			  	</p>
 	  		</div>
 	  	</div>
 	  </div>
