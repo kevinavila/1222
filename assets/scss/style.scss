@@ -42,8 +42,11 @@ a, a:hover {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 #logo {
-  width: 80px;
-  height: 50px;
+  height: 45px;
+
+  @media (min-width: 900px) {
+    height: 50px;
+  }
 }
 
 .footer {
