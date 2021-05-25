@@ -1,6 +1,30 @@
-<svg viewBox="0 0 168 82" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M75.2624 1H39.2329L3 31.1953H30.2261L3 81H69.093L71.2804 76.9986H39.2329L75.2624 1Z" stroke="white" stroke-width="2"/>
-<path d="M49.783 54.7827H96.4668L87.8003 70.6362H142.236L130.963 80.9999H69.0931" stroke="white" stroke-width="2"/>
-<path d="M62.7029 27.4929H131.854L113.522 61.0287H153.695L142.236 70.6363" stroke="white" stroke-width="2"/>
-<path d="M75.2625 1H166L138.139 51.9663H164.703L153.695 61.0287" stroke="white" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" style="enable-background:new 0 0 612 792;" xml:space="preserve" viewBox="144.11 530.99 323.67 216.17">
+<style type="text/css">
+	.st0{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;stroke-width:5;}
+	.st1{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;stroke-width:5;}
+	.st2{stroke:#FFFFFF;stroke-miterlimit:10;stroke-width:5;}
+	.st3{fill:none;stroke:#2F2F88;stroke-miterlimit:10;stroke-width:5;}
+</style>
+<g id="Layer_1">
+	<g id="XMLID_2_">
+		<g>
+		</g>
+		<g>
+			<polygon class="st0" points="287.94,531.49 216.16,531.49 144.61,612.08 198.8,611.8 144.61,746.6 275.4,746.6 279.99,735.97      215.49,736.33 236.85,675.95 262.65,603    "/>
+			<polyline class="st0" points="287.94,531.49 467.28,531.49 411.57,666.5 464.48,666.46 443.27,691.8 420.74,718.71      397.34,746.66 275.4,746.6    "/>
+			<polyline class="st0" points="236.78,675.95 236.85,675.95 329.3,675.95 312.69,719.13 420.74,718.71    "/>
+			<polyline class="st0" points="262.42,603 262.65,603 399.29,604.75 365.44,692.08 443.27,691.8    "/>
+		</g>
+	</g>
+	<path class="st1" d="M291.84,797.15"/>
+	<path class="st2" d="M499.33,494.77"/>
+	<path class="st0" d="M274.53,742.91"/>
+	<path class="st2" d="M488.02,622.44"/>
+	<path class="st0" d="M269.48,774.58"/>
+	<path class="st0" d="M432.03,687.54"/>
+	<path class="st3" d="M599.37,575.63"/>
+	<path class="st1" d="M381.68,812.13"/>
+</g>
+<g id="Layer_2">
+</g>
 </svg>
