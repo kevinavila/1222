@@ -65,6 +65,20 @@ a, a:hover {
   }
 }
 
+.join-footer {
+
+  .items {
+    width: fit-content;
+  }
+
+  @media (min-height: 740px) {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
 .border {
   border-bottom: 0.2rem solid white;
   width: 60%;
