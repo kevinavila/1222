@@ -30,6 +30,8 @@ function validateAccessCode(accessCode) {
             if (response.success) {
                 // Access code validated
                 $("#logo").attr("src", "img/logo_pink.png")
+                $(".join-footer").addClass("footer")
+                $(".join-footer").removeClass("join-footer")
                 $(".join").fadeOut(500, function () {
                     $.get('/party/' + response.party.id, function(response) {
                         // Show agreements before party details
@@ -70,17 +72,18 @@ function updateNext() {
 
 // Check if agreement checkboxes are checked
 function agreementsChecked() {
-    var agreementsChecked         = false
-    var agreementsCheckbox        = $('#agreements-checkbox')
-    var agreementsCheckboxRespect = $('#agreements-checkbox-respect')
-    var agreementsCheckboxJourney = $('#agreements-checkbox-journey')
-    var agreementsCheckboxTrace   = $('#agreements-checkbox-trace')
-    var agreementsCheckboxActions = $('#agreements-checkbox-actions')
+    var agreementsChecked            = false
+    var agreementsCheckbox           = $('#agreements-checkbox')
+    var agreementsCheckboxRespect    = $('#agreements-checkbox-respect')
+    var agreementsCheckboxJourney    = $('#agreements-checkbox-journey')
+    var agreementsCheckboxTrace      = $('#agreements-checkbox-trace')
+    var agreementsCheckboxActions    = $('#agreements-checkbox-actions')
+    var agreementsCheckboxPhotograph = $('#agreements-checkbox-photograph')
 
     if (agreementsCheckbox.is(":checked")) {
         // Mobile agreements checkbox is checked
         agreementsChecked = true
-    } else if (agreementsCheckboxRespect.is(":checked") && agreementsCheckboxJourney.is(":checked") && agreementsCheckboxTrace.is(":checked") && agreementsCheckboxActions.is(":checked")) {
+    } else if (agreementsCheckboxRespect.is(":checked") && agreementsCheckboxJourney.is(":checked") && agreementsCheckboxTrace.is(":checked") && agreementsCheckboxActions.is(":checked") && agreementsCheckboxPhotograph.is(":checked")) {
         // Desktop agreements checkboxes are checked
         agreementsChecked = true
     }

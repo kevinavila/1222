@@ -143,7 +143,7 @@ a, a:hover {
     }
   }
 
-  #agreements-checkbox, #agreements-checkbox-respect, #agreements-checkbox-journey, #agreements-checkbox-trace, #agreements-checkbox-actions {
+  #agreements-checkbox, #agreements-checkbox-respect, #agreements-checkbox-journey, #agreements-checkbox-trace, #agreements-checkbox-actions, #agreements-checkbox-photograph {
     display: none;
   }
 
@@ -239,6 +239,19 @@ a, a:hover {
   .agreement {
     width: 80%;
     float: left;
+  }
+
+  .pink-smiley {
+    background-image: url('../img/pink_smiley.png');
+    position: relative;
+    width: 60%;
+    height: 4rem;
+  }
+
+  .pink-texture {
+    background-image: url('../img/pink_texture_1.png');
+    position: relative;
+    width: 40%;
   }
 }
 
