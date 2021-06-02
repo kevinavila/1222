@@ -30,8 +30,6 @@ function validateAccessCode(accessCode) {
             if (response.success) {
                 // Access code validated
                 $("#logo").attr("src", "img/logo_pink.png")
-                $(".join-footer").addClass("footer")
-                $(".join-footer").removeClass("join-footer")
                 $(".join").fadeOut(500, function () {
                     $.get('/party/' + response.party.id, function(response) {
                         // Show agreements before party details
@@ -39,6 +37,10 @@ function validateAccessCode(accessCode) {
                         $(".join").html(partyHtml)
                         $(".footer").removeClass("fixed")
                         $(".join").fadeIn(500)
+
+                        // Make footer non-sticky
+                        $(".join-footer").addClass("footer")
+                        $(".join-footer").removeClass("join-footer")
                     })
                 })
             } else {

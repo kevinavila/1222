@@ -22,11 +22,11 @@ exports.parties = function(req, res) {
 	contentful.getEntries('party').then(function (partyEntries) {
 		var party = null
 
-		// Find a party entry that has the access code
+		// Find a party entry that has the access code and is live
 		partyEntries.forEach(function (partyEntry) {
 			var partyFields = partyEntry.fields
 
-			if (partyFields.accessCode == accessCode) {
+			if (partyFields.accessCode == accessCode && partyFields.live) {
 				party = partyFields
 				party.id = partyEntry.sys.id
 			}
