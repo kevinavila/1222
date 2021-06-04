@@ -29,6 +29,9 @@ function validateAccessCode(accessCode) {
         $.get('/parties?code=' + accessCode, function(response) {
             if (response.success) {
                 // Access code validated
+                // Hide footer
+                $("#footer").hide()
+
                 $("#logo").attr("src", "img/logo_pink.png")
                 $(".join").fadeOut(500, function () {
                     $.get('/party/' + response.party.id, function(response) {
@@ -38,9 +41,10 @@ function validateAccessCode(accessCode) {
                         $(".footer").removeClass("fixed")
                         $(".join").fadeIn(500)
 
-                        // Make footer non-sticky
-                        $(".join-footer").addClass("footer")
-                        $(".join-footer").removeClass("join-footer")
+                        // Show non-sticky footer
+                        $("#footer").addClass("footer")
+                        $("#footer").removeClass("join-footer")
+                        $("#footer").show()
                     })
                 })
             } else {
@@ -60,6 +64,7 @@ function letsParty() {
         // Show party details
         $('.agreements').hide()
         $('.party-details').removeClass('hide')
+        $(window).scrollTop(0)
     }
 }
 
