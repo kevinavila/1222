@@ -63,7 +63,7 @@ function letsParty() {
     }
 }
 
-// Update next arrow based on agreement checkboxes
+// Check if agreement checkboxes are checked and update next arrow
 function updateNext() {
     if (agreementsChecked()) {
         $(".next").removeClass("disabled")
@@ -74,21 +74,5 @@ function updateNext() {
 
 // Check if agreement checkboxes are checked
 function agreementsChecked() {
-    var agreementsChecked            = false
-    var agreementsCheckbox           = $('#agreements-checkbox')
-    var agreementsCheckboxRespect    = $('#agreements-checkbox-respect')
-    var agreementsCheckboxJourney    = $('#agreements-checkbox-journey')
-    var agreementsCheckboxTrace      = $('#agreements-checkbox-trace')
-    var agreementsCheckboxActions    = $('#agreements-checkbox-actions')
-    var agreementsCheckboxPhotograph = $('#agreements-checkbox-photograph')
-
-    if (agreementsCheckbox.is(":checked")) {
-        // Mobile agreements checkbox is checked
-        agreementsChecked = true
-    } else if (agreementsCheckboxRespect.is(":checked") && agreementsCheckboxJourney.is(":checked") && agreementsCheckboxTrace.is(":checked") && agreementsCheckboxActions.is(":checked") && agreementsCheckboxPhotograph.is(":checked")) {
-        // Desktop agreements checkboxes are checked
-        agreementsChecked = true
-    }
-
-    return agreementsChecked
+    return $('#agreements-checkbox-mobile').is(":checked") || $('#agreements-checkbox-desktop').is(":checked")
 }
