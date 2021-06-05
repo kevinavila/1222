@@ -23,39 +23,6 @@
 	  	<p class="donation-text">{{ party.donationText }}</p>
 		<p class="donation-amount">{{ party.donationAmount }}</p>
 	  	<p class="pb3">Venmo: @productions-1222<br>Cash App: $productions1222</p>
-	  	<h3>AGREEMENTS</h3>
-	  	<div>
-	  		<div class="star">
-	  			<img src="img/star.png" alt="star" width="40px" height="40px">
-	  		</div>
-	  		<div>
-	  			<p class="agreement pt2">Respect + Love Each Other ❤️ NO ILL WILL TOLERATED</p>
-	  		</div>
-		</div>
-		<div>
-			<div class="star">
-				<img src="img/star.png" alt="star" width="40px" height="40px">
-			</div>
-			<div>
-				<p class="agreement pt2">Be safe, be quick, and be quiet on your journey, we never want to attract any unnecessary attention.</p>
-			</div>
-		</div>
-		<div>
-			<div class="star">
-				<img src="img/star.png" alt="star" width="40px" height="40px">
-			</div>
-			<div class="agreement">
-				<p class="pt2">LEAVE NO TRACE! (Trash, vandalism, etc.) We must be respectful of the spaces we occupy and all people who use it. We respect the community = The community respects us!</p>
-			</div>
-		</div>
-		<div>
-			<div class="star">
-				<img src="img/star.png" alt="star" width="40px" height="40px">
-			</div>
-			<div class="agreement">
-				<p class="pt2">BYOB!</p>
-			</div>
-		</div>
 	  </div>
 
 	  <!-- Desktop -->
@@ -75,12 +42,13 @@
 				<p class="location-tip underline pb3">{{ party.locationTip }}</p>
 			</div>
 			<div class="one-half column">
-				<h3>AGREEMENTS</h3>
-				<img src="img/star.png" alt="star" width="40px" height="40px" class="float-left"><p class="pt2">Respect + Love Each Other ❤️ NO ILL WILL TOLERATED</p>
-				<img src="img/star.png" alt="star" width="40px" height="40px" class="float-left"><p class="pt2">Be safe, be quick, and be quiet on your journey, we never want to attract any unnecessary attention.</p>
-				<img src="img/star.png" alt="star" width="40px" height="40px" class="float-left"><p class="pt2">LEAVE NO TRACE! (Trash, vandalism, etc.) We must be respectful of the spaces we occupy and all people who use it. We respect the community = The community respects us!</p>
-				<img src="img/star.png" alt="star" width="40px" height="40px" class="float-left"><p class="pt2">BYOB!</p>
-	  		</div>
+					<h3>LINEUP</h3>
+				<p class="pb3">
+				{{#each party.artistLineup }}
+					{{ this }}<br>
+				{{/each}}
+				</p>
+			</div>
 	  	</div>
 	  	<div class="row">
 	  		<div class="one-half column">
@@ -88,14 +56,6 @@
 				<p class="donation-text">{{ party.donationText }}</p>
 				<p class="donation-amount">{{ party.donationAmount }}</p>
 				<p>Venmo: @productions-1222<br>Cash App: $productions1222</p>
-	  		</div>
-	  		<div class="one-half column">
-	  			<h3>LINEUP</h3>
-			  	<p class="pb3">
-			  	{{#each party.artistLineup }}
-			  		{{ this }}<br>
-			  	{{/each}}
-			  	</p>
 	  		</div>
 	  	</div>
 	  </div>
