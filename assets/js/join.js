@@ -3,18 +3,23 @@
 // Enter key is pressed on mobile
 $('#access-code').keypress(function(event) {
     if (event.which == 13) {
-        // Get access code
-        var accessCode = $('#access-code').val()
-        validateAccessCode(accessCode)
+        validateAccessCode()
     }
 })
 
 // Enter key is pressed on desktop
 $('#access-code-desktop').keypress(function(event) {
     if (event.which == 13) {
-        // Get access code
-        var accessCode = $('#access-code-desktop').val()
-        validateAccessCode(accessCode)
+        validateAccessCode()
+    }
+})
+
+// Access code input changed on mobile
+$('#access-code').on('input', function() {
+    if ($('#access-code').val().length > 0) {
+        $('.next').show()
+    } else {
+        $('.next').hide()
     }
 })
 
@@ -25,6 +30,11 @@ $('.join').on('change', 'input:checkbox', function() {
 
 // Validate access code, grab party, and display agreements
 function validateAccessCode(accessCode) {
+    var accessCode = $('#access-code').val()
+    if (!accessCode) {
+        accessCode = $('#access-code-desktop').val()
+    }
+
     if (accessCode) {
         $.get('/parties?code=' + accessCode, function(response) {
             if (response.success) {
