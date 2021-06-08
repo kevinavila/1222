@@ -6,7 +6,7 @@ module.exports = function(app) {
   var capsule = require('../controllers/capsule');
 
   // Home
-  app.route('/').get(join.get);
+  app.route('/').get(capsule.get);
 
   // Join
   app.route('/join').get(join.get);
