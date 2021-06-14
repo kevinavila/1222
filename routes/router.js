@@ -1,12 +1,13 @@
 'use strict';
 
 module.exports = function(app) {
+  var home    = require('../controllers/home');
   var join    = require('../controllers/join');
   var party   = require('../controllers/party');
   var capsule = require('../controllers/capsule');
 
   // Home
-  app.route('/').get(capsule.get);
+  app.route('/').get(home.get);
 
   // Join
   app.route('/join').get(join.get);
