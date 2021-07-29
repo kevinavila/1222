@@ -3,15 +3,15 @@
 var contentful = require('../services/contentful');
 
 exports.get = function(req, res) {
-	contentful.getEntries('capsuleImage').then(function (entries) {
+	contentful.getAssets('capsule').then(function (assets) {
 		var imageUrls = []
 
 		// Construct array of URLs
-		if (entries.length > 0) {
-			var capsuleImages = entries.map(entry => entry.fields)
+		if (assets.length > 0) {
+			var capsuleImages = assets.map(asset => asset.fields)
 
 			imageUrls = capsuleImages.map(function(capsuleImage) {
-				var url = 'https:' + capsuleImage.image.fields.file.url
+				var url = 'https:' + capsuleImage.file.url
 
 				return url
 			})

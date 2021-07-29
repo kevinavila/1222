@@ -43,3 +43,21 @@ module.exports.getEntries = function(contentType) {
         console.log(e);
     });
 };
+
+/**
+ * Gets assets
+ *
+ * @returns {Array<Obj>} - array of assets
+ */
+module.exports.getAssets = function(tag) {
+    var query = {
+        'metadata.tags.sys.id[all]': tag
+    }
+
+    return client.getAssets(query).then(function (response) {
+        return response.items
+    })
+    .catch(function (e) {
+        console.log(e);
+    });
+};
