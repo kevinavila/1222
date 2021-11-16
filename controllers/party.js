@@ -16,7 +16,7 @@ exports.get = function(req, res) {
 };
 
 exports.parties = function(req, res) {
-	var accessCode = req.query.code
+	var accessCode = req.query.code.toLowerCase()
 
 	// Query for party entries
 	contentful.getEntries('party').then(function (partyEntries) {
