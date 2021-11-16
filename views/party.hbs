@@ -20,9 +20,13 @@
 	  	{{/each}}
 	  	</p>
 	  	<h3>$$$$$$$$$$$</h3>
-	  	<p class="donation-text">{{ party.donationText }}</p>
-		<p class="donation-amount">{{ party.donationAmount }}</p>
-	  	<p class="pb3">Venmo: @productions-1222<br>Cash App: $productions1222</p>
+		{{#if party.eventbriteEmbedCode}}
+			<p>{{{party.eventbriteEmbedCode}}}</p>
+		{{else}}
+			<p class="donation-text">{{ party.donationText }}</p>
+			<p class="donation-amount">{{ party.donationAmount }}</p>
+			<p class="pb3">Venmo: @productions-1222<br>Cash App: $productions1222</p>
+		{{/if}}
 	  </div>
 
 	  <!-- Desktop -->
@@ -53,9 +57,13 @@
 	  	<div class="row">
 	  		<div class="one-half column">
 				<h3>$$$$$$$$$$$$$</h3>
-				<p class="donation-text">{{ party.donationText }}</p>
-				<p class="donation-amount">{{ party.donationAmount }}</p>
-				<p>Venmo: @productions-1222<br>Cash App: $productions1222</p>
+				{{#if party.eventbriteEmbedCode}}
+					<p>{{{party.eventbriteEmbedCode}}}</p>
+				{{else}}
+					<p class="donation-text">{{ party.donationText }}</p>
+					<p class="donation-amount">{{ party.donationAmount }}</p>
+					<p>Venmo: @productions-1222<br>Cash App: $productions1222</p>
+				{{/if}}
 	  		</div>
 	  	</div>
 	  </div>
