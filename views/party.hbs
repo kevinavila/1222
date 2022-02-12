@@ -4,58 +4,70 @@
 
 	<div class="party-details hide">
 
-	  <!-- Mobile -->
-	  <div class="hide-gt-tablet">
-	  	<h2 class="page-title pt4 uppercase">{{ party.title }}</h2>
+	<!-- Mobile -->
+	<div class="hide-gt-tablet">
+		<h2 class="page-title pt4 uppercase">{{ party.title }}</h2>
 		<p>{{ party.vibeLine }}</p>
-		<!--  <p class="pb4">{{ party.introduction }}</p> -->
-		<!--  <h3>LOCATION</h3> -->
-	  	<p class="location-address">{{ party.locationName }}<br>{{ party.locationAddress }}</p>
-	  	<img src="{{ party.locationMapImage }}">
-	  	<p class="location-tip underline pb3">{{ party.locationTip }}</p>
-		<!-- <h3>LINEUP</h3> -->
-	  	<p class="pb3">
-	  	{{#each party.artistLineup }}
-	  		{{ this }}<br>
-	  	{{/each}}
-	  	</p>
-	  	<h3>$$$$$$$$$$$</h3>
-		{{#if party.eventbriteEmbedCode}}
+		{{#if party.introduction }}
+			<p class="pb4">{{ party.introduction }}</p>
+		{{/if}}
+		{{#if party.locationName }}
+			<h3>LOCATION</h3>
+			<p class="location-address">{{ party.locationName }}<br>{{ party.locationAddress }}</p>
+		{{/if}}
+		<img src="{{ party.locationMapImage }}">
+		<p class="location-tip underline pb3">{{ party.locationTip }}</p>
+		{{#if party.artistLineup }}
+				<h3>LINEUP</h3>
+				<p class="pb3">
+			{{#each party.artistLineup }}
+				{{ this }}<br>
+			{{/each}}
+			</p>
+		{{/if}}
+		<h3>$$$$$$$$$$$</h3>
+		{{#if party.eventbriteEmbedCode }}
 			<p>{{{party.eventbriteEmbedCode}}}</p>
 		{{else}}
 			<p class="donation-text">{{ party.donationText }}</p>
 			<p class="donation-amount">{{ party.donationAmount }}</p>
 			<p class="pb3">Venmo: @productions-1222<br>Cash App: $productions1222</p>
 		{{/if}}
-	  </div>
+	</div>
 
-	  <!-- Desktop -->
-	  <div class="hide-lt-tablet">
+	<!-- Desktop -->
+	<div class="hide-lt-tablet">
 		<h2 class="page-title pt4 uppercase">{{ party.title }}</h2>
 		<div class="row">
 			<div class="one-half column">
-				<!-- <p class="vibe-line pb5">{{ party.vibeLine }}</p> -->
+				{{#if party.vibeLine }}
+					<p class="vibe-line pb5">{{ party.vibeLine }}</p>
+				{{/if}}
 				<p>{{ party.introduction }}</p>
 			</div>
 		</div>
 		<div class="row">
 			<div class="one-half column">
-				<!-- <h3>LOCATION</h3> -->
-				<p class="location-address">{{ party.locationName }}<br>{{ party.locationAddress }}</p>
+				{{#if party.locationName }}
+					<h3>LOCATION</h3>
+					<p class="location-address">{{ party.locationName }}<br>{{ party.locationAddress }}</p>
+				{{/if}}
 				<img class="location-map-image" src="{{ party.locationMapImage }}">
 				<p class="location-tip underline pb3">{{ party.locationTip }}</p>
 			</div>
 			<div class="one-half column">
-				<!-- <h3>LINEUP</h3> -->
-				<p class="pb3">
-				{{#each party.artistLineup }}
-					{{ this }}<br>
-				{{/each}}
+				{{#if party.artistLineup }}
+					<h3>LINEUP</h3>
+					<p class="pb3">
+					{{#each party.artistLineup }}
+						{{ this }}<br>
+					{{/each}}
+				{{/if}}
 				</p>
 			</div>
-	  	</div>
-	  	<div class="row">
-	  		<div class="one-half column">
+		</div>
+		<div class="row">
+			<div class="one-half column">
 				<h3>$$$$$$$$$$$$$</h3>
 				{{#if party.eventbriteEmbedCode}}
 					<p>{{{party.eventbriteEmbedCode}}}</p>
@@ -64,9 +76,9 @@
 					<p class="donation-amount">{{ party.donationAmount }}</p>
 					<p>Venmo: @productions-1222<br>Cash App: $productions1222</p>
 				{{/if}}
-	  		</div>
-	  	</div>
-	  </div>
-
+				</div>
+			</div>
+		</div>
 	</div>
+	
 </div>
